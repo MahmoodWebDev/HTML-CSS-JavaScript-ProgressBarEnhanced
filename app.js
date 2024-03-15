@@ -15,7 +15,9 @@ document.addEventListener("DOMContentLoaded", function () {
 
   // Set initial progress bar width and text content
   progressBar.style.width = progressValue.toFixed(2) + "%";
-  yearProgressText.textContent = `2024 IS ${progressValue.toFixed(2)}% OVER`;
+  yearProgressText.textContent = `${currentDate.getFullYear()} IS ${progressValue.toFixed(
+    2
+  )}% OVER`;
 
   // Update progress bar and text content when the date input changes
   dateInput.addEventListener("change", function () {
@@ -26,6 +28,8 @@ document.addEventListener("DOMContentLoaded", function () {
       ((selectedDate - startOfYear) / (endOfYear - startOfYear)) * 100;
 
     progressBar.style.width = progressValue.toFixed(2) + "%";
-    yearProgressText.textContent = `2024 IS ${progressValue.toFixed(2)}% OVER`;
+    yearProgressText.textContent = `${selectedDate.getFullYear()} IS ${progressValue.toFixed(
+      2
+    )}% OVER`;
   });
 });
